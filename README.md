@@ -1,6 +1,7 @@
 LINUX SERVER DEPLOYMENT (FSND):
 ===============================
 INTRODUCTION:
+
 In this project we are required to deploy the application that we built previously (https://github.com/mehmoodsyed/fsnd_ab_catalog.git) on a Linux Server.
 
 DESCRIPTION:
