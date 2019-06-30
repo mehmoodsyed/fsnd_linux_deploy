@@ -4,6 +4,7 @@ INTRODUCTION:
 In this project we are required to deploy the application that we built previously (https://github.com/mehmoodsyed/fsnd_ab_catalog.git) on a Linux Server.
 
 DESCRIPTION:
+
 The suggested platform for this project was Amazon Lightsail and that's where I started. I ditched Amazon Lightsail for Microsoft Azure
 after few days of frustration. Setting up the additional user and configuring a non-standard SSH port took more time than I anticipated
 on Amazon Lightsail. However deploying on Azure proved to be much better experience. In all it took me roughly 6-8 hours after selecting my Azure instance to get my app operational. For size of my VM I selected Standard B1ls (1 vcpus, 0.5 GiB memory). For region I selected East US and for image I selected Ubuntu Server 18.04 LTS. The cost quoted at the time of creation was less than $4. The IP address of my instance is 40.87.93.145. I selected user name ubuntu as my admin user. For DNS name I selected msyedhobbyserver. So my application can be accessed at the following URL:
@@ -11,6 +12,7 @@ http://msyedhobbyserver.eastus.cloudapp.azure.com/
 
 
 SETUP, MODIFICATIONS and EXECUTION:
+
 After creating the instance, the next order of business was to create key pair to connect with my instance via SSH client. I used PuTTY Key Generator to generate the public and the private keys. I needed to paste public key in my Azure admin portal so that my admin user ubuntu was ready when I connected with SSH client. For my SSH client I selected PuTTY. Connecting with my instance via SSH client using the private key generated in the previous step was successful.
 Issuing command
 
@@ -165,7 +167,7 @@ My application is now ready to go live. I execute following two commands:
     sudo service apache2 restart
 
 
-From this point on the application will be available @ msyedhobbyserver.eastus.cloudapp.azure.com
+From this point on the application will be available @ http://msyedhobbyserver.eastus.cloudapp.azure.com
 
 
   RESOURCES USED:
