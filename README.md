@@ -115,6 +115,24 @@ It is now time to start deploying the application. First I needed to install Apa
 
 After above steps, pointing my browser to the URL of my server displayed "Apache2 Ubuntu Default Page".
 
+After this I added Apache configuration file audiobook_catalog.conf in the folder /etc/apache2/sites-available with the following contents to allow my app to be served by Apache:
+
+
+    <VirtualHost *:80>
+        ServerName msyedhobbyserver.eastus.cloudapp.azure.com
+        ServerAdmin mehmoodsyed@gmail.com
+        WSGIDaemonProcess application user=ubuntu threads=3
+        WSGIScriptAlias / /var/www/audiobook_catalog/wsgi.py
+        <Directory /var/www/audiobook_catalog/>
+            WSGIProcessGroup application
+            WSGIApplicationGroup %{GLOBAL}
+            Require all granted
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
 After the above steps, I started to install components that are needed by my application by issuing following commands:
 
 
